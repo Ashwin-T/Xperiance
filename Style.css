@@ -89,10 +89,26 @@ form{
     transition-duration: 0.4s;
 }
 .buttonHome:hover {
-    background-color: #36454f ; /* Green */
+    background-color: #36454f ;
     color: white;
   }
 
 .inline{
     display: flex; 
 }
+.submit{
+    border-radius: 10%;
+    margin-left: 2%;
+    font-size: 27px;
+    padding: 10px;
+    border: 2px solid #D4AF37;
+    box-sizing: border-box;
+    color: black;
+    transition-duration: 0.4s;
+    display: inline-flex;
+}
+.submit:hover{
+    background-color: #32CD32 ; /*fix button color + position */
+    color: black;
+}
+

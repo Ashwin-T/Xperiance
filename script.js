@@ -12,7 +12,7 @@ function scrollFunction() {
   }
 }
 
-function visitReviewPage(){
+function visitQandAPage(){
   window.location="questionsAndAnswers.html";
 }
 function visitIndex(){
@@ -25,3 +25,18 @@ function visitHelpPage(){
   window.location="help.html";
 }
 //end of Frontend Java Script
+
+//storage for questions page w Firebase
+
+function submitQuestion(e){
+  e.preventDefault();
+
+  console.log(123); // test
+}
+var temp = document.getElementById('questions') //lol why isnt this working
+
+if (temp){
+  temp.addEventListener('submit', submitQuestion);
+}
+
+
