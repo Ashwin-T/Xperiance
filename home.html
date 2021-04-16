@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <link rel="stylesheet" type="text/css" href="Style.css"/>
+        <script src="script.js"></script>
+        <script src = "firebase.js"></script>
+
+        <meta name= "Description" content= "MV Xperience is a resource that provides students with reviews and advice from real current and previous MVHS students, giving students a better idea of the commitment level and course load of different classes and composite schedules based off real student experience.">
+        <link rel="icon" href= "images/main.png">
+
+        <title>MV Xperience</title>
+    </head>
+    <!-- main page after login portal-->
+    <body>
+        <div class="topnav"><!--sets up sticky bar on top-->
+            <a href = "#signOut" style = "background-color: black; color: #D4AF37" onclick="visitIndex()">Sign Out</a>
+            <a href="#help" onclick ="visitHelpPage()">Help</a>
+            <a class="active" href="#home" onclick= "visitHomePage()">Home</a>
+            
+            <div id="topNavIcon"><img src="images/main.PNG" style="width: 100%;"></div>
+
+        </div>
+
+        <datalist id="classes" style = "font-family: ubuntu condensed;">
+            <option value="Math">
+            <option value = "CS">
+            <option value="English">
+            <option value="Science">
+            <option value="History">
+            <option value="PE">
+            <option value="Language">
+        </datalist>
+
+        <!-- classes are tests for now shall put in external json file later for real class names -->
+
+        
+        <div class = "mainText" style = "margin-left: 17%;">
+            <b>
+                Search Reviews
+            </b>
+            <form>
+                <input type="text" list = "classes" placeholder = "Search by Class..." style = "font-size: 17px;" ><!--scroll down bar-->
+            </form>  
+        </div> 
+
+
+
+        <div class = "aboutText" style= "margin-top: 2%;">
+            <h1>
+                MV Xperience is a resource that provides students with reviews and advice from real, current, and previous MVHS students, giving students a better idea of the commitment level needed, course loads of different classes, and composite schedules.
+            </h1> <!--About section-->
+        </div>
+
+        <div class = "inline">
+            <button class = "buttonHome" name = "review"style= "font-size: 60px;margin-left: 17%; float: left;">Submit a Review</button>
+            <button class = "buttonHome" name = "Q&A"style= "font-size: 60px; margin-right: 17%; float: right;" onclick= "visitReviewPage()">Questions & Answers</button> <!--buttons for moving to different sections (using seperate html files)-->
+        </div>
+
+          
+
+    </body> 
+
+
+
+</html>
