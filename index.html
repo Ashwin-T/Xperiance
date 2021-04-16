@@ -14,6 +14,35 @@
         <title>MV Xperience</title>
 </head> <!-- Login page with firebase login (names will be hidden on interface however) + possiblity of no login due to schools reasons-->
 <body>
-    
+     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+        <script>    
+            // TODO: Replace the following with your app's Firebase project configuration
+            // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+            const firebaseConfig = {
+            apiKey: "AIzaSyCDuzirc5m7jvLfQlcw1pOXsC0s0Fg2J8A",
+            authDomain: "xperiance-e2fd7.firebaseapp.com",
+            projectId: "xperiance-e2fd7",
+            storageBucket: "xperiance-e2fd7.appspot.com",
+            messagingSenderId: "945190412173",
+            appId: "1:945190412173:web:41990b52cd9e337756a7c4",
+            measurementId: "G-RV1P34P93Q"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            //end of firebase     
+        </script>
 </body>
 </html>
