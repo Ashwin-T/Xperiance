@@ -1,4 +1,4 @@
-const form = document.querySelector('#questions'); // for inputting form into firebase database
+const form = document.querySelector('#add-questions'); // for inputting form into firebase database
  
 //frontend javaScript
 window.onscroll = function() {scrollFunction()};
