@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
         <meta name="theme-color" content="#000000">
         <link rel="stylesheet" type="text/css" href="Style.css"/>
-        <script src="script.js"></script>
 
         <meta name= "Description" content= "MV Xperience is a resource that provides students with reviews and advice from real current and previous MVHS students, giving students a better idea of the commitment level and course load of different classes and composite schedules based off real student experience.">
         <link rel="icon" href= "images/main.png">
@@ -15,7 +14,7 @@
 
     <body>
         <div class="topnav"><!--sets up sticky bar on top-->
-            <a href = "#signOut" style = "background-color: black; color: #D4AF37">Sign Out</a>
+            <a href ="#signOut" style = "background-color: black; color: #D4AF37">Sign Out</a>
             <a href="#help">Help</a>
             <a href="#home" onclick= "visitHomePage()">Home</a>
             <div id="topNavIcon"><img src="images/main.PNG" style="width: 100%;"></div>
@@ -26,7 +25,7 @@
             <b>
                 Ask A Question
             </b>
-            <form id = "questions" >
+            <form id = "add-questions" >
                 <input type="text" id = "questionBox" placeholder = "I was wondering if..." style = "font-size: 17px;" ><!--scroll down bar-->
                 <button type= "submit" class = "submit"> Submit</button> <!--fix button color + position-->
             </form>  
@@ -37,13 +36,11 @@
 
         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
 
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
 
         <!-- Add Firebase products that you want to use -->
         <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
         <script>    
             // TODO: Replace the following with your app's Firebase project configuration
@@ -60,10 +57,14 @@
 
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true });
+
 
             //end of firebase     
         </script>     
 
-       
+        <script src="app.js"></script>
+
     </body>
 </html>

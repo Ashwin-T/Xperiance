@@ -1,4 +1,5 @@
-
+const form = document.querySelector('#questions'); // for inputting form into firebase database
+ 
 //frontend javaScript
 window.onscroll = function() {scrollFunction()};
 
@@ -25,18 +26,16 @@ function visitHelpPage(){
   window.location="help.html";
 }
 //end of Frontend Java Script
-
 //storage for questions page w Firebase
 
-function submitQuestion(e){
+//save data
+
+form.addEventListener('submit', (e) =>{
   e.preventDefault();
-
-  console.log(123); // test
-}
-var temp = document.getElementById('questions') //lol why isnt this working
-
-if (temp){
-  temp.addEventListener('submit', submitQuestion);
-}
-
+  db.collection('questions').add({
+    questionsAsked: form.questionBox.value,
+    //feild: query.nameOfForm.value,
+  })
+  form.questionsAsked.value = '';
+});
 
