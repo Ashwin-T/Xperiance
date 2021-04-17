@@ -36,6 +36,6 @@ form.addEventListener('submit', (e) =>{
     questionsAsked: form.questionBox.value,
     //feild: query.nameOfForm.value,
   })
-  form.questionsAsked.value = '';
+  document.getElementById('questionBox').value = '';
 });
 
