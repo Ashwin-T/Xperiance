@@ -17,10 +17,12 @@ input[type=text] {
     border:none;
     border-bottom: 3px solid #D4AF37;
     color: black;
+    /*cool*/
 }
 input[type=text]:focus {
     border: 3px solid #555;
   }
+
 /* Create a sticky/fixed navbar */
 .topnav {
     background-color: #fff;
@@ -108,7 +110,9 @@ form{
     display: inline-flex;
 }
 .submit:hover{
-    background-color: #32CD32 ; /*fix button color + position */
+    background-color: #228B22 ; /*fix button color + position */
     color: black;
 }
 
+
+    
