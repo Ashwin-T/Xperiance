@@ -31,8 +31,11 @@
             </form>  
 
     
-            <div id = "questionList"> 
-               100   
+            <div id = "questionListContainer"> 
+                
+                <ul id = "questionList">
+
+                </ul>
             </div>
         
             
@@ -65,7 +68,6 @@
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
             const db = firebase.firestore();
-            db.settings({ timestampsInSnapshots: true });
 
 
             //end of firebase     

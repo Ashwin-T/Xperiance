@@ -1,5 +1,6 @@
 const form = document.querySelector('#add-questions'); // for inputting form into firebase database
-
+var questionsPullRef = db.collection('questions');
+const output = document.querySelector('#questionList'); // for output form into firebase database
 
  
 //frontend javaScript
@@ -32,15 +33,13 @@ function visitHelpPage(){
 //Questions page w Firebase
 
 //save data
-const docRef = db.collection('questions');
-const output = document.querySelector('#questionList'); // for output form into firebase database
 
 //feildName for firebase: questions asked (type: string)  
 
 form.addEventListener('submit', (e)=>{
   e.preventDefault();
   if(form.questionBox.value != ''){
-    docRef.add({
+    questionsPullRef.add({
       questionsAsked: form.questionBox.value,
 
     }).then(function(){
@@ -52,42 +51,25 @@ form.addEventListener('submit', (e)=>{
 });//this works!
 
 
-//try 5125
-getRealtimeUpdates = function(){
-  docRef.onSnapshot({includeMetadataChanges: true},function(doc){
-    if (doc && doc.exists){
-      const dataQ = doc.data();
-      output.textContent = "Data: " + dataQ.questionsAsked;
-    }
-  })
-}
-
-getRealtimeUpdates(); //what the actual frick it doesnt work
-
-
-
-// retrive and post data 
-/*
-function renderQuestions(doc){
+function renderCafe(doc){
   let li = document.createElement('li');
-  let questionMessage = document.createElement('span');
-  li.setAttribute('data-id',  doc.id);
-  questionMessage.textContext = doc.data().questionsAsked;
+  let questionText = document.createElement('span')
+  li.setAttribute('date-id', doc.id);
+  questionText.textContent = doc.data().questionsAsked;
 
-  li.appendChild(questionMessage);
+  li.appendChild(questionText);
 
-  questionList .appendChild(li);
-  console.log(doc);
+  output.appendChild(li);
+
+  
 }
 
-db.collection('questions').get().then((snapshot) =>{
-  snapshot.docs.forEach(doc =>{
-    renderQuestions(doc);
-  }) 
-})
-*/
+questionsPullRef.get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+      renderCafe(doc);
+    });
+}) //works as of now
 
-//try 2
 
 
 
