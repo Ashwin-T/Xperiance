@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
         <meta name="theme-color" content="#000000">
         <link rel="stylesheet" type="text/css" href="Style.css"/>
@@ -10,9 +10,21 @@
         <link rel="icon" href= "images/main.png">
 
         <title>MV Xperience</title>
-</head> <!-- Login page with firebase login (names will be hidden on interface however) + possiblity of no login due to schools reasons-->
-<body>
-     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    </head>
+    <!-- main page after login portal-->
+    <body>
+        <div class="topnav"><!--sets up sticky bar on top-->
+            <a href = "#signOut" style = "background-color: black; color: #D4AF37" onclick="visitIndex()">Sign Out</a>
+            <a href="#help" onclick ="visitHelpPage()">Help</a>
+            <a class="active" href="#home" onclick= "visitHomePage()">Home</a>
+            
+            <div id="topNavIcon"><img src="images/main.PNG" style="width: 100%;"></div>
+
+        </div>
+
+        
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
@@ -44,8 +56,13 @@
 
 
             //end of firebase     
-            
         </script>
-    <script src="app.js"></script>
-    </body>
+        <script src="app.js"></script>
+
+    </body> 
+
+
+
 </html>
+
+

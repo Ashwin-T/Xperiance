@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <link rel="stylesheet" type="text/css" href="Style.css"/>
+
+        <meta name= "Description" content= "MV Xperience is a resource that provides students with reviews and advice from real current and previous MVHS students, giving students a better idea of the commitment level and course load of different classes and composite schedules based off real student experience.">
+        <link rel="icon" href= "images/main.png">
+
+        <title>MV Xperience</title>
+    </head>
+
+    <body>
+        <div class="topnav"><!--sets up sticky bar on top-->
+            <a href ="#signOut" style = "background-color: black; color: #D4AF37">Sign Out</a>
+            <a href="#help">Help</a>
+            <a href="#home" onclick= "visitHomePage()">Home</a>
+            <div id="topNavIcon"><img src="images/main.PNG" style="width: 100%;"></div>
+
+        </div>
+
+        <div class = "mainText" style = "margin-left: 17%;">
+            <b style = "border-bottom: 2px solid #D4AF37">
+                Welcome to the Review Forum
+            </b>
+
+        </div> 
+
+
+        
+            
+
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+        <script>    
+            // TODO: Replace the following with your app's Firebase project configuration
+            // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+            const firebaseConfig = {
+            apiKey: "AIzaSyCDuzirc5m7jvLfQlcw1pOXsC0s0Fg2J8A",
+            authDomain: "xperiance-e2fd7.firebaseapp.com",
+            projectId: "xperiance-e2fd7",
+            storageBucket: "xperiance-e2fd7.appspot.com",
+            messagingSenderId: "945190412173",
+            appId: "1:945190412173:web:41990b52cd9e337756a7c4",
+            measurementId: "G-RV1P34P93Q"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+
+            //end of firebase     
+        </script>     
+
+        <script src="app.js"></script>
+
+    </body>
+</html>
