@@ -1,20 +1,12 @@
 const form = document.querySelector('#add-questions'); // for inputting form into firebase database
 var questionsPullRef = db.collection('questions');
+
+
 const output = document.querySelector('#questionList'); // for output form into firebase database
 
  
 //frontend javaScript
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-  } else {
-    document.getElementById("navbar").style.padding = "80px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
-  }
-}
 
 function visitQandAPage(){
   window.location="questionsAndAnswers.html";
@@ -28,6 +20,9 @@ function visitHomePage(){
 function visitHelpPage(){
   window.location="help.html";
 }
+function visitSubmitReviewPage(){
+  window.location="submitReview.html";
+}
 //end of Frontend Java Script
 
 //Questions page w Firebase
@@ -35,7 +30,7 @@ function visitHelpPage(){
 //save data
 
 //feildName for firebase: questions asked (type: string)  
-
+//this is for entering questions
 form.addEventListener('submit', (e)=>{
   e.preventDefault();
   if(form.questionBox.value != ''){
@@ -43,33 +38,34 @@ form.addEventListener('submit', (e)=>{
       questionsAsked: form.questionBox.value,
 
     }).then(function(){
-      console.log("It worked lol, saved data");
+      console.log("It worked, saved question data");
     })
   }
     //feild: query.nameOfForm.value,
   document.getElementById('questionBox').value = '';
 });//this works!
 
+//this is for entering reviews
 
-function renderCafe(doc){
-  let li = document.createElement('li');
+
+
+
+function renderQuestions(doc){
+  let ti = document.createElement('li');
   let questionText = document.createElement('span')
-  li.setAttribute('date-id', doc.id);
+  ti.setAttribute('date-id', doc.id);
   questionText.textContent = doc.data().questionsAsked;
 
-  li.appendChild(questionText);
+  ti.appendChild(questionText);
 
-  output.appendChild(li);
+  output.appendChild(ti);
 
-  
 }
 
 questionsPullRef.get().then((snapshot) =>{
     snapshot.docs.forEach(doc => {
-      renderCafe(doc);
+      renderQuestions(doc);
     });
 }) //works as of now
-
-
 
 

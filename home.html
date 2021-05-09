@@ -36,11 +36,13 @@
 
         
         <div class = "mainText" style = "margin-left: 17%;">
-            <b>
+            <b style = "border-bottom: 2px solid #D4AF37">
                 Search Reviews
             </b>
             <form>
                 <input type="text" list = "classes" placeholder = "Search by Class..." style = "font-size: 17px;" ><!--scroll down bar-->
+                <input type= "submit" id = "subButton"class = "submit" value = "Search"><!--fix button color + position-->
+
             </form>  
         </div> 
 
@@ -53,7 +55,7 @@
         </div>
 
         <div class = "inline">
-            <button class = "buttonHome" name = "review"style= "font-size: 60px;margin-left: 17%; float: left;">Submit a Review</button>
+            <button class = "buttonHome" name = "review"style= "font-size: 60px;margin-left: 17%; float: left;" onclick = "visitSubmitReviewPage()">Submit a Review</button>
             <button class = "buttonHome" name = "Q&A"style= "font-size: 60px; margin-right: 17%; float: right;" onclick= "visitQandAPage()">Questions & Answers</button> <!--buttons for moving to different sections (using seperate html files)-->
         </div>
 
