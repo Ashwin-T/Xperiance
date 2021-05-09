@@ -23,6 +23,9 @@ function visitHelpPage(){
 function visitSubmitReviewPage(){
   window.location="submitReview.html";
 }
+function visitReviewPage(){
+  window.location = "reviewForumPageMain.html";
+}
 //end of Frontend Java Script
 
 //Questions page w Firebase

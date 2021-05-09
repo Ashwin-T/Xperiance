@@ -1,4 +1,3 @@
-
 var reviewPullRef = db.collection('review');  
 const reviewForm = document.querySelector('#enterReview');
 
@@ -22,7 +21,7 @@ function visitQandAPage(){
 reviewForm.addEventListener('submit', (e)=>{
     console.log('subed')
     e.preventDefault();
-    if(reviewForm.value != ''){
+    if(reviewForm.enterReview.value != ''){
         reviewPullRef.add({
         class: reviewForm.classSelector.value,
         rating: reviewForm.ratingSelector.value,
@@ -32,10 +31,11 @@ reviewForm.addEventListener('submit', (e)=>{
         similarClasses: reviewForm.similarClassSelector.value,
         review: reviewForm.reviewSelector.value,
 
-
         }).then(function(){
         console.log("It worked, saved review data");
         })
+
+        document.getElementById('enterReview').value = '';
     }
         //feild: query.nameOfForm.value,
     

@@ -21,10 +21,24 @@
 
         </div>
 
-        <div class = "mainText" style = "margin-left: 17%;">
-            <b style = "border-bottom: 2px solid #D4AF37">
+        <datalist id="classes" style = "font-family: ubuntu condensed;">
+            <option value="Math">
+            <option value = "CS">
+            <option value="English">
+            <option value="Science">
+            <option value="History">
+            <option value="PE">
+            <option value="Language">
+        </datalist>
+
+        <div class = "mainText" style = "margin-left: 24%;margin-top: 15%;">
+            <b style = "border-bottom: 2px solid #D4AF37;">
                 Welcome to the Review Forum
             </b>
+            <form>
+                <input type="text" list = "classes" placeholder = "Search by Class..." style = "font-size: 17px;"><!--scroll down bar-->
+                <input type= "submit" id = "subButton"class = "submit" value = "Search"><!--fix button color + position-->
+            </form>  
 
         </div> 
 
