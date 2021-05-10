@@ -21,7 +21,7 @@ function visitQandAPage(){
 reviewForm.addEventListener('submit', (e)=>{
     console.log('subed')
     e.preventDefault();
-    if(reviewForm.enterReview.value != ''){
+    if((reviewForm.classSelector.value != '') && (reviewForm.reviewSelector.value != '')){
         reviewPullRef.add({
         class: reviewForm.classSelector.value,
         rating: reviewForm.ratingSelector.value,
@@ -35,7 +35,15 @@ reviewForm.addEventListener('submit', (e)=>{
         console.log("It worked, saved review data");
         })
 
-        document.getElementById('enterReview').value = '';
+        document.getElementById('classSelector').value = '';
+        document.getElementById('ratingSelector').value = '';
+        document.getElementById('gradeSelector').value = '';
+        document.getElementById('timeSelector').value = '';
+        document.getElementById('stressLevelSelector').value = '';
+        document.getElementById('similarClassSelector').value = '';
+        document.getElementById('reviewSelector').value = '';
+
+
     }
         //feild: query.nameOfForm.value,
     
